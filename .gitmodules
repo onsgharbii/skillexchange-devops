@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/nour-allani/SkillExchange-Spring.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/welhazitakwa/skillExchange_Angular.git
