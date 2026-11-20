@@ -1,0 +1,12 @@
+# Opens a PR when the upstream backend/frontend repositories move forward,
+# so every new upstream version goes through the CI smoke test first.
+version: 2
+updates:
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
