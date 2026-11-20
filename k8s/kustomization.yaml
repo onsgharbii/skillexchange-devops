@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: skillexchange
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: skillexchange
+    includeSelectors: false
+resources:
+  - namespace.yaml
+  - mysql.yaml
+  - backend.yaml
+  - frontend.yaml
+# The "skillexchange-secrets" Secret is created out of band from .env
+# (see README): no credentials are stored in this repository.
+images:
+  - name: ghcr.io/onsgharbii/skillexchange-devops/backend
+    newTag: latest
+  - name: ghcr.io/onsgharbii/skillexchange-devops/frontend
+    newTag: latest
